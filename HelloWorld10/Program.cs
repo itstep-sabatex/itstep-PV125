@@ -1,6 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using HelloWorld10;
 
+int r = 1234567;
+
+var revers = new string(r.ToString().ToArray().Reverse().ToArray());
+
+
 var a = new MyClass();
 a.Person = "3424";
 a.MyProperty = 10;
