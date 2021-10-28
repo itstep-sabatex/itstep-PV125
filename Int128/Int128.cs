@@ -1,7 +1,16 @@
 ﻿namespace Int128
 {
-    public class UInt128
+    public class UInt128:Object, IComparable
     {
+        /// <summary>
+        /// byte-8 11111111
+        /// short-16 11111111 11111111
+        /// int 32 111111111 111111111 1111111111 111111111
+        /// long-64 11111111 111111111 1111111111 111111111 111111111 11111111  111111111 11111111
+        /// uint128-128 (16) 11111111 111111111 1111111111 111111111 111111111 11111111  111111111 11111111 11111111 111111111 1111111111 111111111 111111111 11111111  111111111 11111111
+        /// </summary>
+
+
         private ulong _lo;
         private ulong _hi;
         public string lastError;
@@ -37,6 +46,9 @@
             return a._hi != b._hi;
         }
 
+
+
+
         public static implicit operator UInt128(ulong a)
         {
             return new UInt128(0,a);
@@ -63,6 +75,35 @@
 
             return new UInt128(a._hi + b._hi, r);
         }
+        public static UInt128 operator &(UInt128 a, UInt128 b) => new UInt128(a._hi & b._hi, a._lo & b._lo);
+        public static UInt128 operator >>(UInt128 value, int count)
+        {
+            if (count >= 128) return 0;
+            if (count >= 64) return value._hi >> count;
+            return new UInt128(value._hi >> count, value._hi << (64 - count) | value._lo >> count);
+         }
+        public static UInt128 operator <<(UInt128 value, int count)
+        {
+            if (count >= 128) return 0;
+            if (count >= 64) return new UInt128(value._lo << count, 0);
+            return new UInt128(value._hi << count | value._lo >> (64 - count), value._lo << count);
 
+        }
+        public static UInt128 operator *(UInt128 a, UInt128 b)
+        {
+            UInt128 result = 0;
+            for (int i = 0; i < 128; i++)
+            {
+                if ((b & 1) > 0) result += a;
+                a <<= 1;
+                b >>= 1;
+            }
+            return result;
+        }
+
+        public int CompareTo(object? obj)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

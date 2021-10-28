@@ -2,12 +2,14 @@
 using HelloWorld10;
 
 int r = 1234567;
+var tp = r.GetType().FullName;
+
 
 var revers = new string(r.ToString().ToArray().Reverse().ToArray());
 
 
 var a = new MyClass();
-a.Person = "3424";
+a.Person = $"3424{r}234{revers}";
 a.MyProperty = 10;
  //HelloWorld10.MyClass.Student = "254545";
 double v = 10;
