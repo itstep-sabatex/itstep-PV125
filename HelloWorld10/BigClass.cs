@@ -8,6 +8,37 @@ namespace HelloWorld10
 {
     public partial class BigClass
     {
-        public int B { get; set; }
+        static int _b; //field
+        protected int B { get; set; } //field
+
+
+        public int Method1(int par /*parametr*/)
+        {
+            var a = 1; //varable
+            return 1;
+        }
+
     }
+
+    interface ITest
+    {
+        void Paint();
+    }
+
+
+    
+
+
+    internal class BigClass2 : ITest
+    {
+        public void Paint()
+        {
+            throw new NotImplementedException();
+        }
+    }
+    class BigClass4:test.BigClass3
+    {
+
+    }
+
 }
