@@ -23,7 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtualDemo", "VirtualDemo\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UInt128S", "UInt128S\UInt128S.csproj", "{451F1D3B-85C0-4ADE-B2E8-360816276EA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "delegateDemo", "delegateDemo\delegateDemo.csproj", "{0313937A-E077-441F-9155-34B700EED779}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "delegateDemo", "delegateDemo\delegateDemo.csproj", "{0313937A-E077-441F-9155-34B700EED779}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonoCycle", "MonoCycle\MonoCycle.csproj", "{BB3D76C6-4667-4066-BCE7-1004D3E06022}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericDemo", "GenericDemo\GenericDemo.csproj", "{0ABC089C-22D8-471F-AA5B-98634704CF83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +79,14 @@ Global
 		{0313937A-E077-441F-9155-34B700EED779}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0313937A-E077-441F-9155-34B700EED779}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0313937A-E077-441F-9155-34B700EED779}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB3D76C6-4667-4066-BCE7-1004D3E06022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB3D76C6-4667-4066-BCE7-1004D3E06022}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB3D76C6-4667-4066-BCE7-1004D3E06022}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB3D76C6-4667-4066-BCE7-1004D3E06022}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ABC089C-22D8-471F-AA5B-98634704CF83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ABC089C-22D8-471F-AA5B-98634704CF83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ABC089C-22D8-471F-AA5B-98634704CF83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ABC089C-22D8-471F-AA5B-98634704CF83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
