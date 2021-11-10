@@ -1,10 +1,12 @@
 ﻿using GenericDemo;
+using System.Globalization;
+
 var t = new List<string>();
 t.Add("wrwrew");
 t.Add("24432");
 t.Add("122313");
 t.Sort();
-t[4] = "45";
+//t[4] = "45";
 if (t.Contains("er")) { }
 Console.WriteLine(t.Count);
 Dictionary<string, string> englishdic = new Dictionary<string, string>();
@@ -23,6 +25,9 @@ Queue<string> queue = new Queue<string>();
 DateTime dt = DateTime.Now;
 DateTime beinOfDay = new DateTime(dt.Year,dt.Month,dt.Day,0,0,0);
 var bD = dt.BeginOfDay();
+
+
+var bw = dt.BeginOfWeek();
 
 
 
