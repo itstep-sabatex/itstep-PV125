@@ -1,5 +1,23 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+
+MemoryStream ms = new MemoryStream();
+StreamWriter memoryStreamWriter = new StreamWriter(ms);
+
+memoryStreamWriter.WriteLine("Hello World");
+memoryStreamWriter.Flush();
+ms.Seek(0, SeekOrigin.Begin);
+StreamReader streamReader = new StreamReader(ms);
 
 
-FileStream fs = new FileStream
+var s = streamReader.ReadLine();
+
+FileStream fs = File.Open("t.txt", FileMode.Create);
+BinaryWriter bw = new BinaryWriter(fs);
+bw.Write(10);
+
+
+
+
+StreamWriter streamWriter = null;
+BinaryReader reader = null;
+BinaryWriter writer = null;
