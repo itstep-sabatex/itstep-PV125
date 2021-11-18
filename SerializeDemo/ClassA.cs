@@ -32,10 +32,14 @@ namespace SerializeDemo
 
         public bool IsAlive { get; set; }
         public int Age { get; set; }
+        public DateTime Date { get; set; }
         public Address Address { get; set; }
 
         public List<PhoneNumber> PhoneNumbers { get; set; }
         public List<Child> Children { get; set;}
-  
+        public override string ToString()
+        {
+            return $"Firs Name:{FirstName}, Last Name: {LastName}, Save date:{Date}";
+        }
     }
 }

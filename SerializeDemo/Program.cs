@@ -2,29 +2,24 @@
 using SerializeDemo;
 
 
-var test = new ClassA
+
+if (File.Exists("test.json"))
 {
-    Age = 21,
-    FirstName = "Alise",
-    LastName ="Dunli",
-    IsAlive = false,
-    Address = new Address()
-    {
-        City = "Uzhgorod",
-        State = "Transcarpatia",
-        PostalCode ="88015",
-        StreetAddress = "Lenina 60"
-    }
+    var state = File.ReadAllText("test.json");
+    var newtest = System.Text.Json.JsonSerializer.Deserialize<ClassA>(state);
+    Console.WriteLine(newtest);
+}
 
-};
-
-var json = System.Text.Json.JsonSerializer.Serialize(test);
+Console.Write("Enter name:");
+var result = new ClassA();
+result.FirstName = Console.ReadLine();
+Console.Write("Enter Last Name:");
+result.LastName = Console.ReadLine();
+result.Date = DateTime.Now;
+var json = System.Text.Json.JsonSerializer.Serialize(result);
 File.WriteAllText("test.json",json);
 
 
-var rjs = File.ReadAllText("test.json");
-var newtest = System.Text.Json.JsonSerializer.Deserialize<ClassA>(rjs);
 
-var a = 0;
 
 
