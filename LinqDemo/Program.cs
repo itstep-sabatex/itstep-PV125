@@ -40,8 +40,10 @@ string[] st2 = new string[] {"Ivan;","Petro","Semen","Guliana","Marian","Pavlo",
 var rc = st.Union(st2);
 
 
-
-
+var s = File.ReadAllText("task.txt")
+        .Split(' ', '.', ';', ':', '(', ')', '\r', '\n', '=', ',', '/')
+        .Where(s => s.Length > 0 && !Char.IsDigit(s.First())).GroupBy(s=>s)
+        .Select(w=>new {word=w.Key,count=w.Count()}).ToArray();
 
 
 
