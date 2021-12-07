@@ -2,6 +2,7 @@ namespace WinFormsHelloWorld
 {
     public partial class MainForm : Form
     {
+        private Color buttonColor;
         public MainForm()
         {
             InitializeComponent();
@@ -40,6 +41,26 @@ namespace WinFormsHelloWorld
             helloWorldForm.Show();
         }
 
- 
+        private void btLogin_Click(object sender, EventArgs e)
+        {
+            var loginForm = new LoginForm();
+            loginForm.UserName = "Petro";
+            var result = DialogResult.OK;
+            loginForm.Show();
+            if (result == DialogResult.OK)
+            {
+                var userName = loginForm.UserName;
+                var password = loginForm.Password;
+                MessageBox.Show($"{userName} with password {password}");
+            }
+
+
+        }
+
+        private void btChess_Click(object sender, EventArgs e)
+        {
+            var chessForm = new ChessForm();
+            chessForm.Show();
+        }
     }
 }

@@ -33,6 +33,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btHelloWorld = new System.Windows.Forms.Button();
             this.btShowHelloWorld = new System.Windows.Forms.Button();
+            this.btLogin = new System.Windows.Forms.Button();
+            this.btChess = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btCancel
@@ -81,17 +83,38 @@
             this.btShowHelloWorld.UseVisualStyleBackColor = true;
             this.btShowHelloWorld.Click += new System.EventHandler(this.btShowHelloWorld_Click);
             // 
+            // btLogin
+            // 
+            this.btLogin.Location = new System.Drawing.Point(575, 320);
+            this.btLogin.Name = "btLogin";
+            this.btLogin.Size = new System.Drawing.Size(112, 34);
+            this.btLogin.TabIndex = 6;
+            this.btLogin.Text = "Login";
+            this.btLogin.UseVisualStyleBackColor = true;
+            this.btLogin.Click += new System.EventHandler(this.btLogin_Click);
+            // 
+            // btChess
+            // 
+            this.btChess.Location = new System.Drawing.Point(388, 321);
+            this.btChess.Name = "btChess";
+            this.btChess.Size = new System.Drawing.Size(112, 34);
+            this.btChess.TabIndex = 7;
+            this.btChess.Text = "Chess";
+            this.btChess.UseVisualStyleBackColor = true;
+            this.btChess.Click += new System.EventHandler(this.btChess_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 437);
+            this.Controls.Add(this.btChess);
+            this.Controls.Add(this.btLogin);
             this.Controls.Add(this.btShowHelloWorld);
             this.Controls.Add(this.btHelloWorld);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btOk);
             this.Controls.Add(this.btCancel);
-            this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.Text = "Hello World";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
@@ -108,5 +131,7 @@
         private TextBox textBox1;
         private Button btHelloWorld;
         private Button btShowHelloWorld;
+        private Button btLogin;
+        private Button btChess;
     }
 }
