@@ -40,11 +40,12 @@ namespace WinFormsHelloWorld
             {
                 for(int j = 1;j < 9; j++)
                 {
-                    var pb = new Panel();
+                    var pb = new PictureBox();
                     pb.Dock = DockStyle.Fill;
-                    //pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pb.SizeMode = PictureBoxSizeMode.StretchImage;
                     pb.BackColor =  (i+j)%2 == 0 ? Color.White:Color.Gray;
                     pb.Margin = new Padding(0);
+                    pb.Image = Properties.Resources.RockBlack;
                     chessTLP.Controls.Add(pb);
                     chessTLP.SetCellPosition(pb, new TableLayoutPanelCellPosition(i, j));
                 }

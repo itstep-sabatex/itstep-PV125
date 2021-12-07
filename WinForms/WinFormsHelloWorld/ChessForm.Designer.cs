@@ -56,14 +56,14 @@
             this.chessTLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.chessTLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.chessTLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.chessTLP.Size = new System.Drawing.Size(736, 441);
+            this.chessTLP.Size = new System.Drawing.Size(808, 524);
             this.chessTLP.TabIndex = 0;
             // 
             // ChessForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 441);
+            this.ClientSize = new System.Drawing.Size(808, 524);
             this.Controls.Add(this.chessTLP);
             this.Name = "ChessForm";
             this.Text = "ChessForm";
