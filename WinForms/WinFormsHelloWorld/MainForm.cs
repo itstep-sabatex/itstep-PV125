@@ -62,5 +62,102 @@ namespace WinFormsHelloWorld
             var chessForm = new ChessForm();
             chessForm.Show();
         }
+
+        private void btCalendarDemo_Click(object sender, EventArgs e)
+        {
+            var calendarDemoForm = new CalendarDemo();
+            calendarDemoForm.Show();
+        }
+
+        private void btListDemo_Click(object sender, EventArgs e)
+        {
+            var listDemoForm = new ListDemoForm();
+            listDemoForm.Show();
+
+
+        }
+
+        private void btTreeView_Click(object sender, EventArgs e)
+        {
+            var treeView = new ExplorerForm();
+            treeView.Show();
+        }
+
+        private void btOpenFile_Click(object sender, EventArgs e)
+        {
+            var fontDialog = new FontDialog();
+            fontDialog.ShowDialog();
+
+
+
+            var cd = new ColorDialog();
+            cd.ShowDialog();
+            
+           
+
+
+            var sfd = new FolderBrowserDialog();
+            sfd.ShowDialog();
+
+
+
+            var of = new OpenFileDialog();
+            of.Multiselect = true;
+            var dr=of.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                if (of.FileNames.Length > 0)
+                {
+
+                }
+            }
+        }
+
+        private void demoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+ 
+        }
+
+        private void listDemoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var listDemoForm = new ListDemoForm();
+            listDemoForm.Show();
+
+
+        }
+
+        private void calendarDemoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           var calendarDemoForm = new CalendarDemo();
+           calendarDemoForm.Show();
+
+        }
+
+        private void contextMenuStrip1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuSave_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void toolStripMenuExpand_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Maximized;
+        }
+
+        private void dragEndDropToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var dragEndDrop = new DragEndDropDemo();
+            dragEndDrop.Show();
+        }
+
+        private void gDIDemoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var gdiDemoForm = new GDIDemoForm();
+            gdiDemoForm.Show();
+        }
     }
 }

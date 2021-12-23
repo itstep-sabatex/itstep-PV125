@@ -14,6 +14,8 @@ namespace WinFormsHelloWorld
     {
         const string celSimbolNames = "abcdefgh";
 
+        ChessFigure[,] chessDesk = new ChessFigure[8, 8];
+
         public ChessForm()
         {
             InitializeComponent();
@@ -52,6 +54,28 @@ namespace WinFormsHelloWorld
             }
 
 
+
+        }
+
+        void ResetDesk()
+        {
+            
+
+
+
+            chessDesk[0, 0] = new ChessFigure(ChessFigureType.Rock,true);
+            chessDesk[0, 7] = new ChessFigure(ChessFigureType.Rock, true);
+            chessDesk[7, 0] = new ChessFigure(ChessFigureType.Rock, false);
+            chessDesk[7, 7] = new ChessFigure(ChessFigureType.Rock, false);
+        }
+
+        void PaintCell(int i,int j)
+        {
+            var figure = chessDesk[i, j];
+            switch (figure)
+            {
+
+            }
 
         }
 
