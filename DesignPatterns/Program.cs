@@ -13,6 +13,8 @@ using UriyFactory;
 
 
 //Product product = creator.FactoryMethod();     
-CompositeDemo.Do();
+//CompositeDemo.Do();
+DesignPatterns.Bridge.Abstraction.Do();
+
 
 
