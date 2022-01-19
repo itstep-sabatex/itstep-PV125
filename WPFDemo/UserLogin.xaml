@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFDemo"
         mc:Ignorable="d"
-        Title="UserLogin" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="UserLogin" Height="450" Width="800" x:Name="loginWindow">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Width="100">Rolev Name</Label>
+            <TextBox Text="{Binding  Path=UserName}" Width="200" IsEnabled="{Binding ElementName=loginWindow,Path=RememberMe}"/> 
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Width="100">User Name</Label>
+            <TextBox Text="{Binding Path=UserName}" Width="200"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Width="100">Password</Label>
+            <TextBox Text="{Binding Path=Password}" Width="200"/>
+            <Label Content="{Binding Path=Password}"/>
+        </StackPanel>
+        <StackPanel>
+            <CheckBox x:Name="enableRole">Enable Role</CheckBox>
+            <CheckBox IsChecked="{Binding ElementName=loginWindow,Path=RememberMe}">RememberMe</CheckBox>
+        </StackPanel>
+        <Button Click="Button_Click">Ok</Button>
+
+    </StackPanel>
 </Window>

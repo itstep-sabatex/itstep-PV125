@@ -6,25 +6,14 @@
         xmlns:local="clr-namespace:WPFDemo"
         mc:Ignorable="d"
         Title="WPFDemo"  Loaded="Window_Loaded" x:Name="mainWindow"
-        Height="{Binding ElementName=mainWindow,Mode=OneWay, Path=ActualWidth}"
+        Height="200" Width="400"
         Background="AliceBlue">
-    <WrapPanel >
+    <Grid >
         <!--<Button DockPanel.Dock="Top" Height="50">Top</Button>-->
         <!--<Button DockPanel.Dock="Bottom" Height="50">Buttom</Button>-->
-        <Button  Width="50" Click="Button_Click" Visibility="Collapsed">Left</Button>
+        <Button   Click="Button_Click_1">user login</Button>
         <!--<Button DockPanel.Dock="Right" Width="50">Right</Button>-->
-        <CheckBox x:Name="cb1"/>
+   
 
-        <Button x:Name="bt1"  Height="50" Click="Button_Click">
-                <StackPanel Orientation="Horizontal">
-                    <Label>Label</Label>
-                    <CheckBox>Check box</CheckBox>
-                    <TextBox Width="100"/>
-                    <ListBox />
-                </StackPanel>
-            </Button>
-
-        <WebBrowser/>
-        <TreeView/>
-    </WrapPanel>
+    </Grid>
 </Window>

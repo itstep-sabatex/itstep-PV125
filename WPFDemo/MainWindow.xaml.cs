@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFDemo.Models;
 
 namespace WPFDemo
 {
@@ -34,6 +35,18 @@ namespace WPFDemo
         {
             var ul = new UserLogin();
             ul.Show();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var userLogin =  new UserLogin();
+            userLogin.LoginData = new LoginExtend();
+            //userLogin.CustomUserLogin = new Login();
+            if (userLogin.ShowDialog() == true)
+            {
+                var result = (LoginExtend)(userLogin.LoginData);
+                var a = 10;
+            }
         }
     }
 }

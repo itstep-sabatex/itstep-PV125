@@ -2,17 +2,17 @@
 using DesignPatterns;
 using UriyFactory;
 
-Console.WriteLine("Hello, World!");
+//Console.WriteLine("Hello, World!");
 
 //Creator creator = new ConcreteCreatorA();
 
 
-Product product1 = new ConcreteProductA();
-Creator.Initial(product1,10,24);
+//Product product1 = new ConcreteProductA();
+//Creator.Initial(product1,10,24);
 
 
 
-Product product = creator.FactoryMethod();     
-
+//Product product = creator.FactoryMethod();     
+CompositeDemo.Do();
 
 

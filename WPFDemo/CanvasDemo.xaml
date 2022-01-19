@@ -1,0 +1,18 @@
+﻿<Window x:Class="WPFDemo.CanvasDemo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFDemo"
+        mc:Ignorable="d"
+        Title="CanvasDemo" Height="450" Width="200">
+    <Canvas>
+        <Button Canvas.Left="10">Button 1</Button>
+        <Button Canvas.Right="0">Button 2</Button>
+        <Button Canvas.Bottom="0" Canvas.Right="0">Button 3</Button>
+        <Button Canvas.Top="40">Button 4</Button>
+        <Button Canvas.Top="100" Canvas.Right="500">Button 5</Button>
+        <Button Canvas.Left="60">Button 6</Button>
+        <Button Canvas.Left="60">Button 7</Button>
+    </Canvas>
+</Window>

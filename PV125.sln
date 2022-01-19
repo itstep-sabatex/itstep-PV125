@@ -41,17 +41,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerializeDemo", "SerializeD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CharpDemo", "CharpDemo\CharpDemo.csproj", "{17D0C2CD-56AD-4C63-AFA1-45AC65C7556D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{81F7C5B2-3A31-403E-994B-E82853E71116}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinForms", "WinForms", "{0874EE29-A115-48F1-96B8-7CF0CF174126}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsHelloWorld", "WinForms\WinFormsHelloWorld\WinFormsHelloWorld.csproj", "{38D74FE6-B047-49F3-8AF5-6330157D8579}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFDemo", "WPFDemo\WPFDemo.csproj", "{8ADFE820-D5F2-49F5-A89D-1026C9D25C04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns", "DesignPatterns\DesignPatterns.csproj", "{5A950812-8633-4897-8DAD-6E0CAACE5EFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns", "DesignPatterns\DesignPatterns.csproj", "{5A950812-8633-4897-8DAD-6E0CAACE5EFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UriyFactory", "UriyFactory\UriyFactory.csproj", "{C9BFF998-0B50-4C1A-9B27-9D7FB884862A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UriyFactory", "UriyFactory\UriyFactory.csproj", "{C9BFF998-0B50-4C1A-9B27-9D7FB884862A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -135,10 +133,6 @@ Global
 		{17D0C2CD-56AD-4C63-AFA1-45AC65C7556D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17D0C2CD-56AD-4C63-AFA1-45AC65C7556D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17D0C2CD-56AD-4C63-AFA1-45AC65C7556D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{81F7C5B2-3A31-403E-994B-E82853E71116}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{81F7C5B2-3A31-403E-994B-E82853E71116}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{81F7C5B2-3A31-403E-994B-E82853E71116}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{81F7C5B2-3A31-403E-994B-E82853E71116}.Release|Any CPU.Build.0 = Release|Any CPU
 		{38D74FE6-B047-49F3-8AF5-6330157D8579}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{38D74FE6-B047-49F3-8AF5-6330157D8579}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38D74FE6-B047-49F3-8AF5-6330157D8579}.Release|Any CPU.ActiveCfg = Release|Any CPU
