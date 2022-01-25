@@ -48,5 +48,10 @@ namespace WPFDemo
                 var a = 10;
             }
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            this.Resources["buttonBackgroundColor"] = new SolidColorBrush(Colors.Green);
+        }
     }
 }

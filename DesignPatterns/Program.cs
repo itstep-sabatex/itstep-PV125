@@ -14,7 +14,7 @@ using UriyFactory;
 
 //Product product = creator.FactoryMethod();     
 //CompositeDemo.Do();
-DesignPatterns.Bridge.Abstraction.Do();
-
+//DesignPatterns.Bridge.Abstraction.Do();
+DesignPatterns.State.Do();
 
 

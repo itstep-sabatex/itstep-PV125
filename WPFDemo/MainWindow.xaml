@@ -8,12 +8,18 @@
         Title="WPFDemo"  Loaded="Window_Loaded" x:Name="mainWindow"
         Height="200" Width="400"
         Background="AliceBlue">
-    <Grid >
+    <Window.Resources>
+
+    </Window.Resources>
+    <StackPanel >
         <!--<Button DockPanel.Dock="Top" Height="50">Top</Button>-->
         <!--<Button DockPanel.Dock="Bottom" Height="50">Buttom</Button>-->
-        <Button   Click="Button_Click_1">user login</Button>
+        <Button   Click="Button_Click_1" Background="{StaticResource buttonBackgroundColor}">user login</Button>
+        <Button   Click="Button_Click_1" Background="{DynamicResource buttonBackgroundColor}">Test 2</Button>
+        <Button Click="Button_Click_2" >Change Color</Button>
+
         <!--<Button DockPanel.Dock="Right" Width="50">Right</Button>-->
    
 
-    </Grid>
+    </StackPanel>
 </Window>
