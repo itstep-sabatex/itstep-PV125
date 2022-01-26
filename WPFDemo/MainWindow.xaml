@@ -3,21 +3,41 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sabatex ="clr-namespace:sabatex.WPF.Controls;assembly=sabatex.WPF.Controls"
         xmlns:local="clr-namespace:WPFDemo"
         mc:Ignorable="d"
         Title="WPFDemo"  Loaded="Window_Loaded" x:Name="mainWindow"
         Height="200" Width="400"
         Background="AliceBlue">
     <Window.Resources>
+        
+        <Style x:Key="myButton">
+            <Setter Property="ItemsControl.Background" Value="LightCyan"/>
+            <Setter Property="ItemsControl.Foreground" Value="Black"/>
+            <Setter Property="ItemsControl.FontSize" Value="6"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="AntiqueWhite"/>
+            <Setter Property="Foreground" Value="Brown"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
+
 
     </Window.Resources>
     <StackPanel >
         <!--<Button DockPanel.Dock="Top" Height="50">Top</Button>-->
         <!--<Button DockPanel.Dock="Bottom" Height="50">Buttom</Button>-->
-        <Button   Click="Button_Click_1" Background="{StaticResource buttonBackgroundColor}">user login</Button>
-        <Button   Click="Button_Click_1" Background="{DynamicResource buttonBackgroundColor}">Test 2</Button>
-        <Button Click="Button_Click_2" >Change Color</Button>
-
+        <Button   Click="Button_Click_1" Style="{StaticResource myButton}">user login</Button>
+        <Button   Click="Button_Click_1">Test 2</Button>
+        <Border BorderThickness="2"
+                CornerRadius="2"
+                Padding="1"
+                BorderBrush="{Binding ElementName=myButt,Path=BorderBrush,Mode=OneWay}"
+                Background = "{Binding ElementName=myButt,Path=Background,Mode=OneWay}">
+            <Button  x:Name="myButt" Click="Button_Click_2" BorderThickness="0">Change Color</Button>
+        </Border>
+       
         <!--<Button DockPanel.Dock="Right" Width="50">Right</Button>-->
    
 
