@@ -11,13 +11,33 @@
         Background="AliceBlue">
     <Window.Resources>
         
-        <Style x:Key="myButton">
+        <Style x:Key="myButton" TargetType="Button">
             <Setter Property="ItemsControl.Background" Value="LightCyan"/>
             <Setter Property="ItemsControl.Foreground" Value="Black"/>
             <Setter Property="ItemsControl.FontSize" Value="6"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="ItemsControl.FontSize" Value="16"/>
+                </Trigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsMouseOver" Value="false"/>
+                        <Condition Property="IsFocused" Value="true"/>
+                    </MultiTrigger.Conditions>
+                    <MultiTrigger.Setters>
+                        <Setter Property="ItemsControl.FontSize" Value="26"/>
+                    </MultiTrigger.Setters>
+                </MultiTrigger>
+                <DataTrigger Binding="{Binding ElementName=myButt,Path=IsMouseOver}" Value="true">
+                    <Setter Property="Background" Value="Chocolate"/>
+                </DataTrigger>
+                <MultiDataTrigger>
+                    <
+                </MultiDataTrigger>
+            </Style.Triggers>
         </Style>
         <Style TargetType="Button">
-            <Setter Property="Background" Value="AntiqueWhite"/>
+            <Setter Property="Background" Value="Wheat"/>
             <Setter Property="Foreground" Value="Brown"/>
             <Setter Property="FontSize" Value="16"/>
             <Setter Property="BorderThickness" Value="2"/>
