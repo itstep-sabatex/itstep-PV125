@@ -21,6 +21,7 @@ namespace WPFDemo
     /// </summary>
     public partial class MainWindow : Window
     {
+        private const string Autor = "Autor";
         public MainWindow()
         {
             InitializeComponent();
@@ -45,7 +46,8 @@ namespace WPFDemo
             if (userLogin.ShowDialog() == true)
             {
                 var result = (LoginExtend)(userLogin.LoginData);
-                var a = 10;
+                int a = 10;
+
             }
         }
 
