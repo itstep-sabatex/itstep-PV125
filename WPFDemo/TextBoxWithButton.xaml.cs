@@ -36,17 +36,22 @@ namespace WPFDemo
         }
 
 
-        public static readonly RoutedEvent ButtonClickEvent = EventManager.RegisterRoutedEvent(typeof(ButtonClick),RoutingStrategy.
+        public static readonly RoutedEvent ButtonClickEvent = 
+            EventManager.RegisterRoutedEvent(nameof(ButtonClick), RoutingStrategy.Bubble, 
+                                             typeof(RoutedEventHandler), typeof(TextBoxWithButton));
 
         public event RoutedEventHandler ButtonClick
         {
-            
+            add { AddHandler(ButtonClickEvent, value); }
+            remove { RemoveHandler(ButtonClickEvent, value); }
         }
 
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            RoutedEventArgs args = new RoutedEventArgs();
+            args.RoutedEvent = ButtonClickEvent;
+            RaiseEvent(args);
         }
     }
 }

@@ -29,7 +29,7 @@ namespace WPFDemo
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Width = 1366;
+            //Width = 1366;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -54,6 +54,16 @@ namespace WPFDemo
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             this.Resources["buttonBackgroundColor"] = new SolidColorBrush(Colors.Green);
+        }
+
+        private void TextBoxWithButton_ButtonClick(object sender, RoutedEventArgs e)
+        {
+            var a = new  Microsoft.Win32. OpenFileDialog();
+        }
+
+        private void shapeDemo_Click(object sender, RoutedEventArgs e)
+        {
+            new ShapeDemo().Show();
         }
     }
 }

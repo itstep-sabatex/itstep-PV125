@@ -51,6 +51,7 @@
 
     </Window.Resources>
     <StackPanel >
+        <Button x:Name="shapeDemo" Click="shapeDemo_Click">Sahpe Demo</Button>
         <!--<Button DockPanel.Dock="Top" Height="50">Top</Button>-->
         <!--<Button DockPanel.Dock="Bottom" Height="50">Buttom</Button>-->
         <Button   Click="Button_Click_1" Style="{StaticResource myButton}">user login</Button>
@@ -74,7 +75,7 @@
             <TextBox  x:Name="demoTB" Text=""/>
             <Button Grid.Column="1" Width="20">...</Button>
         </Grid>
-        <local:TextBoxWithButton  Text="{Binding ElementName=demoTB,Path=Text,Mode=TwoWay}"></local:TextBoxWithButton>    
-    
+        <local:TextBoxWithButton  ButtonClick="TextBoxWithButton_ButtonClick" Text="{Binding ElementName=demoTB,Path=Text,Mode=TwoWay}"></local:TextBoxWithButton>
+        <sabatex:FolderPath/>
     </StackPanel>
 </Window>
