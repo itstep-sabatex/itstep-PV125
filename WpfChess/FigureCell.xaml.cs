@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chess;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -7,7 +8,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -21,6 +21,17 @@ namespace WpfChess
     /// </summary>
     public partial class FigureCell : UserControl
     {
+
+
+        public readonly static DependencyProperty IsMarkFigureProperty = 
+            DependencyProperty.Register(nameof(IsMarkFigure), typeof(bool), typeof(FigureCell), new PropertyMetadata(false));
+        public bool IsMarkFigure 
+        {
+            get=>(bool)GetValue(IsMarkFigureProperty);
+            set=>SetValue(IsMarkFigureProperty,value);
+        }
+
+
         BitmapImage ByteArrayToBitmapImage(Byte[] bytes)
         {
             var stream = new MemoryStream(bytes);
@@ -35,8 +46,19 @@ namespace WpfChess
         BitmapImage? getImmage(Figure? figure)
         {
             if (figure == null) return null;
+            switch (figure.FigureOrder)
+            {
+                case 0: return figure.FigureColor == FigureColor.White ? ByteArrayToBitmapImage(FigureImages.KingWhite) : ByteArrayToBitmapImage(FigureImages.KingBlack);
+                case 1: return figure.FigureColor == FigureColor.White? ByteArrayToBitmapImage(FigureImages.PawnWhite): ByteArrayToBitmapImage(FigureImages.PawnBlack);
+                case 2: return figure.FigureColor == FigureColor.White ? ByteArrayToBitmapImage(FigureImages.BishopWhite) : ByteArrayToBitmapImage(FigureImages.BishopBlack);
+                case 3: return figure.FigureColor == FigureColor.White ? ByteArrayToBitmapImage(FigureImages.HourseWhite) : ByteArrayToBitmapImage(FigureImages.HourseBlack);
+                case 4: return figure.FigureColor == FigureColor.White ? ByteArrayToBitmapImage(FigureImages.RockWhite) : ByteArrayToBitmapImage(FigureImages.RockBlack);
+                case 5: return figure.FigureColor == FigureColor.White ? ByteArrayToBitmapImage(FigureImages.QueenWhite) : ByteArrayToBitmapImage(FigureImages.QueenBlack);
 
-            return ByteArrayToBitmapImage(FigureImages.PawnWhite);
+
+            }
+
+            return null;
         }
 
         Figure? _figure = null;

@@ -10,7 +10,7 @@ namespace Chess
     {
         public override int FigureOrder => 1;
         private bool _firstMove = true;
-        protected override bool CheckMove(int x, int y, int destX, int destY, Figure[,] desk)
+        protected override bool CheckMove(int x, int y, int destX, int destY, ChessDesk desk)
         {
 
             if (FigureColor == FigureColor.Black)
@@ -20,21 +20,23 @@ namespace Chess
                 {
                     var r = destY - y;
 
-                    if (_firstMove)
+                    if (r == 2 && _firstMove)
                     {
-                        if (r > 2) return false;
                         if (desk[destX, destY] == null && desk[destX, destY - 1] == null) return true;
-
+                        return false;
                     }
-                    else
+                    
+                    if (r == 1)
                     {
-                        if (r > 1) return false;
                         if (desk[destX, destY] == null) return true;
+                        return false;
+
                     }
                     return false;
                 }
                 else
                 {
+                    return false;
                     // бити
                     // check coords
                     if (destY - y != 1) return false;

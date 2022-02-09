@@ -8,7 +8,7 @@ namespace Chess
 {
     public abstract class Figure
     {
-        protected abstract bool CheckMove(int x, int y, int destX, int destY, Figure[,] desk);
+        protected abstract bool CheckMove(int x, int y, int destX, int destY, ChessDesk desk);
  
         //public Tuple<int,int>[] CanMove(int x, int y, Figure[,] desk)
         //{
@@ -25,7 +25,7 @@ namespace Chess
         //    }
         //    return result.ToArray();
         //}
-        public IEnumerable<Tuple<int, int>> CanMove(int x, int y, Figure[,] desk)
+        public IEnumerable<Tuple<int, int>> CanMove(int x, int y, ChessDesk desk)
         {
             for (int i = 0; i < 8; i++)
             {
