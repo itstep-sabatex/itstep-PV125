@@ -6,20 +6,20 @@
         xmlns:local="clr-namespace:WPFDemo"
         mc:Ignorable="d"
         Title="ShapeDemo" Height="400" Width="400" Loaded="Window_Loaded" Closed="Window_Closed">
-    <Grid >
-        <Ellipse Width="20" Height="20" Fill="Black" />
-        <Rectangle Width="3" Height="200" Stroke="Black" StrokeThickness="1" RenderTransformOrigin="0.5,0.5">
+    <Canvas >
+        <Ellipse Canvas.Left="200"  Canvas.Top="200" Width="20" Height="20" Fill="Black" />
+        <Rectangle Canvas.Left="210" Canvas.Top="210"  Width="3" Height="200" Stroke="Black" StrokeThickness="1" RenderTransformOrigin="0.5,0" >
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform Angle="90" x:Name="secondAngle"/>
+                    <RotateTransform Angle="60" x:Name="secondAngle"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
 
-        <Rectangle Width="10" Height="150" Stroke="Black" StrokeThickness="1" RenderTransformOrigin="0.5,0.5">
+        <Rectangle Canvas.Left="205" Canvas.Top="210" Width="10" Height="150" Stroke="Black" StrokeThickness="1"  RenderTransformOrigin="0.5,0">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -30,15 +30,29 @@
             </Rectangle.RenderTransform>
         </Rectangle>
 
-        <Rectangle Width="15" Height="100" Stroke="Black" StrokeThickness="1" RenderTransformOrigin="0.5,0.5" >
+        <Rectangle Canvas.Left="202" Canvas.Top="210" Width="15" Height="100" Stroke="Black" StrokeThickness="1" RenderTransformOrigin="0.5,0" >
             <Rectangle.RenderTransform>
                 <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
+                    <ScaleTransform ScaleY="1.5"/>
+                    <SkewTransform  />
                     <RotateTransform Angle="60" x:Name="hourAngle"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-    </Grid>
+
+        <Polygon Points="50,150,150,50,250,150"  Fill="AliceBlue" Stroke="Black"/>
+        <Polyline Stroke="Red" Points="100,150,150,50,250,50"/>
+
+        <Label x:Name="labelVertical" RenderTransformOrigin="0,0">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform X="{Binding ElementName=labelVertical,Path=ActualHeight}"/>
+                </TransformGroup>
+            </Label.RenderTransform> Vertical
+        </Label>
+    </Canvas>
 </Window>

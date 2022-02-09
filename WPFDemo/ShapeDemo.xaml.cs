@@ -34,6 +34,8 @@ namespace WPFDemo
             timer.Interval = new TimeSpan(0, 0, 1);
             timer.Tick += Timer_Tick;
             timer.Start();
+            Width = 500;
+            Height = 600;
         }
 
         private void Timer_Tick(object? sender, EventArgs e)
