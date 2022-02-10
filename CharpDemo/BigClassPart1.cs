@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace HelloWorld10
-{
+namespace SharpDemo;
+
     public partial class BigClass
     {
         public int A { get; set; }
         public BigClass()
         {
-            var c = new microsoft.stringextensions.MyStringExtension();
+            //var c = new microsoft.stringextensions.MyStringExtension();
         }
     }
-}
+

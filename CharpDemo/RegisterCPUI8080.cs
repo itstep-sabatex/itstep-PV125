@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HelloWorld10
-{
+namespace CharpDemo;
+
     [Flags]
     public enum RegisterCPUI8080:byte
     {
@@ -16,4 +16,4 @@ namespace HelloWorld10
         Carry = 0x10,   //0001 0000
         All = 0x1f      //0001 1111
     }
-}
+

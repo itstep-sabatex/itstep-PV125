@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TypesDemo
+namespace CharpDemo
 {
     internal class TypesDemo
     {

@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HelloWorld10
-{
+namespace SharpDemo;
+
     public partial class BigClass
     {
         static int _b; //field
@@ -36,9 +36,5 @@ namespace HelloWorld10
             throw new NotImplementedException();
         }
     }
-    class BigClass4:test.BigClass3
-    {
+ 
 
-    }
-
-}
