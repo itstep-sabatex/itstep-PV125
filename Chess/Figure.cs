@@ -19,30 +19,25 @@ namespace Chess
         }
 
 
-        public abstract bool CheckMove(int x, int y, int destX, int destY, ChessDesk desk);
-        public bool CheckMove(ChessPoint source, ChessPoint destination, ChessDesk desk)=>
-            CheckMove(source.Row,source.Column,destination.Row,destination.Column,desk);
+        //public abstract bool CheckMove(int x, int y, int destX, int destY, ChessDesk desk);
+        public abstract bool CheckMove(ChessPoint source, ChessPoint destination, ChessDesk desk);
 
         public IEnumerable<ChessPoint> CanMove(ChessPoint position, ChessDesk desk)
-        {
-            return CanMove(position.Row, position.Column, desk);
-        }
-
-        public IEnumerable<ChessPoint> CanMove(int row, int column, ChessDesk desk)
         {
             for (int _row = 0; _row < 8; _row++)
             {
                 for (int _column = 0; _column < 8; _column++)
                 {
-                    if (row == _row && column == _column) continue;
-                    if (CheckMove(row, column, _row, _column, desk))
+                    var destination = new ChessPoint(_row, _column);
+                    if (CheckMove(position, destination, desk))
                     {
-                        
-                        yield return new ChessPoint(_row,_column);
+                        yield return destination;
                     }
                 }
             }
+
         }
+
         
         public abstract int FigureOrder { get; }
 

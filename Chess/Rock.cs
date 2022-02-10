@@ -14,7 +14,8 @@ namespace Chess
                 
         }
 
-        public override bool CheckMove(int x, int y, int destX, int destY, ChessDesk desk)
+ 
+        public override bool CheckMove(ChessPoint source, ChessPoint destination, ChessDesk desk)
         {
             return false;
         }

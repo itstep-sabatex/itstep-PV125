@@ -33,7 +33,7 @@ namespace WpfChess
             InitializeComponent();
         }
 
-        FigureCell? getFigureCell(int x,int y)
+        FigureCell? getFigureCell(ChessPoint point)
         {
             foreach (UIElement ui in chessDesk.Children)
             {
@@ -41,21 +41,18 @@ namespace WpfChess
                 {
                     int rowIndex = Grid.GetRow(ui);
                     int columnIndex = Grid.GetColumn(ui);
-                    if (rowIndex-1 == y && columnIndex-1 == x)
+                    if (rowIndex-1 == point.Row && columnIndex-1 == point.Column)
                         return (FigureCell)ui;
                 }
             }
             return null;
         }
 
-        FigureCell? getFigureCell(ChessPoint point)=>getFigureCell(point.Row,point.Column);
-
-
         ChessPoint getFigureCellPosition(FigureCell figureCell)
         {
             int rowIndex = Grid.GetRow(figureCell);
             int columnIndex = Grid.GetColumn(figureCell);
-            return new ChessPoint(columnIndex-1, rowIndex - 1);
+            return new ChessPoint(rowIndex - 1, columnIndex - 1);
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -65,10 +62,11 @@ namespace WpfChess
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    var cell = getFigureCell(i, j);
+                    ChessPoint point = new ChessPoint(i, j);
+                    var cell = getFigureCell(point);
                     if (cell != null)
                     {
-                        cell.Figure = _desk[i, j];
+                        cell.Figure = _desk[point];
                         cell.MouseEnter += Cell_MouseEnter;
                         cell.MouseLeave += Cell_MouseLeave;
                         cell.MouseDown += Cell_MouseDown;

@@ -14,23 +14,27 @@ namespace Chess
 
         }
 
-        public override bool CheckMove(int column, int row, int destColumn, int destRow, ChessDesk desk)
+
+        public override bool CheckMove(ChessPoint source, ChessPoint destination, ChessDesk desk)
         {
-            int deltaRow = destRow - row;
-            int deltaCol = destColumn - column;
+            if (FigureColor != desk.ActiveColor) return false;
+
+            int deltaRow = destination.Row - source.Row;
+            int deltaCol = destination.Column- source.Column;
 
             if (deltaCol == 0)
             {
                 // self
                 if (deltaRow == 0) return false;
                 // check direction
-                if (deltaRow <0 && FigureColor == FigureColor.Black) return false;
-                
+                if (deltaRow < 0 && FigureColor == FigureColor.Black) return false;
+                if (deltaRow > 0 && FigureColor == FigureColor.White) return false;
+
                 int direction = deltaRow > 0 ? 1 : -1;
-                
+
                 if (Math.Abs(deltaRow) == 1)
                 {
-                    if (desk[column, row + direction] == null)
+                    if (desk[source.Row + direction,source.Column] == null)
                         return true;
                     else
                         return false;
@@ -39,24 +43,25 @@ namespace Chess
                 if (Math.Abs(deltaRow) == 2)
                 {
                     if (!IsFirstMove) return false;
-                    if (desk[column, row + direction] == null && desk[column, row + 2*direction] == null)
+                    if (desk[source.Row + direction,source.Column] == null && desk[source.Row + 2*direction, source.Column] == null)
                         return true;
                     else
                         return false;
                 }
                 return false;
             }
-            
-            if (Math.Abs(deltaRow) == 1 && Math.Abs(deltaCol)==1)
+
+            if (Math.Abs(deltaRow) == 1 && Math.Abs(deltaCol) == 1)
             {
                 // check direction
                 if (deltaRow < 0 && FigureColor == FigureColor.Black) return false;
-                var figure = desk[destColumn, destRow];
+                if (deltaRow > 0 && FigureColor == FigureColor.White) return false;
+                var figure = desk[destination];
                 if (figure == null) return false;
                 return figure.FigureColor != FigureColor;
             }
 
             return false;
-         }
+        }
     }
 }

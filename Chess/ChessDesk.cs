@@ -14,39 +14,39 @@ namespace Chess
         
         public void Clear()
         {
-            for (var i = 2;i < 6; i++)
+            for (var row = 2;row < 6; row++)
             {
-                for (var j = 0;j < 8; j++) 
+                for (var column = 0; column < 8; column++) 
                 {
-                    _figures[i, j] = null;
+                    _figures[row, column] = null;
                 }
             }
             // pawn
-            for (var i = 0;i < 8; i++)
+            for (var column = 0; column < 8; column++)
             {
-                _figures[i, 1] = new Pawn(FigureColor.Black);
-                _figures[i, 6] = new Pawn(FigureColor.White);
+                _figures[1,column] = new Pawn(FigureColor.Black);
+                _figures[6, column] = new Pawn(FigureColor.White);
             }
             // rook
             _figures[0,0] = new Rock(FigureColor.Black);
-            _figures[7,0] = new Rock(FigureColor.Black);
-            _figures[0,7] = new Rock(FigureColor.White);
+            _figures[0,7] = new Rock(FigureColor.Black);
+            _figures[7,0] = new Rock(FigureColor.White);
             _figures[7,7] = new Rock(FigureColor.White);
 
-            _figures[1,0] = new House(FigureColor.Black);
-            _figures[6, 0] = new House(FigureColor.Black);
-            _figures[1, 7] = new House(FigureColor.White );
-            _figures[6, 7] = new House(FigureColor.White);
+            _figures[0,1] = new Horse(FigureColor.Black);
+            _figures[0,6] = new Horse(FigureColor.Black);
+            _figures[7,1] = new Horse(FigureColor.White );
+            _figures[7,6] = new Horse(FigureColor.White);
 
-            _figures[2, 0] = new Bishop(FigureColor.Black );
-            _figures[5, 0] = new Bishop(FigureColor.Black);
-            _figures[2, 7] = new Bishop(FigureColor.White );
-            _figures[5, 7] = new Bishop(FigureColor.White);
+            _figures[0,2] = new Bishop(FigureColor.Black );
+            _figures[0,5] = new Bishop(FigureColor.Black);
+            _figures[7,2] = new Bishop(FigureColor.White );
+            _figures[7,5] = new Bishop(FigureColor.White);
 
-            _figures[3, 0] = new King(FigureColor.Black );
-            _figures[4, 0] = new Queen(FigureColor.Black );
-            _figures[3, 7] = new King(FigureColor.White );
-            _figures[4, 7] = new Queen(FigureColor.White );
+            _figures[0,3] = new King(FigureColor.Black );
+            _figures[0,4] = new Queen(FigureColor.Black );
+            _figures[7,3] = new King(FigureColor.White );
+            _figures[7,4] = new Queen(FigureColor.White );
 
 
         }
@@ -79,6 +79,7 @@ namespace Chess
             figure.IsFirstMove = false;
             _figures[destination.Row, destination.Column] = figure;
             _figures[source.Row, source.Column] = null;
+            ActiveColor = ActiveColor == FigureColor.Black?FigureColor.White:FigureColor.Black;
 
         }
 
