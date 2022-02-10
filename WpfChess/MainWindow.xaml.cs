@@ -23,8 +23,10 @@ namespace WpfChess
     {
         ChessDesk _desk = new ChessDesk();
         Cursor? _cursor;
-        Tuple<int, int>[] _canMove;
+        ChessPoint[] _canMove;
         bool _isFigureSelected = false;
+
+        FigureCell? selectedFigure = null;
 
         public MainWindow()
         {
@@ -46,11 +48,14 @@ namespace WpfChess
             return null;
         }
 
-        (int x,int y) getFigureCellPosition(FigureCell figureCell)
+        FigureCell? getFigureCell(ChessPoint point)=>getFigureCell(point.Row,point.Column);
+
+
+        ChessPoint getFigureCellPosition(FigureCell figureCell)
         {
             int rowIndex = Grid.GetRow(figureCell);
             int columnIndex = Grid.GetColumn(figureCell);
-            return (columnIndex-1,rowIndex-1);
+            return new ChessPoint(columnIndex-1, rowIndex - 1);
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -74,13 +79,44 @@ namespace WpfChess
 
         private void Cell_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            FigureCell f = sender as FigureCell;
             if (_isFigureSelected)
             {
                 _isFigureSelected = false;
+                if (f != null)
+                {
+                    if (selectedFigure != null)
+                    {
+                        var destination = getFigureCellPosition(f);
+                        var source = getFigureCellPosition(selectedFigure);
+                        try
+                        {
+                            _desk.Move(source, destination);
+                            
+                            f.Figure = selectedFigure.Figure;
+                            selectedFigure.Figure = null;
+                            selectedFigure = null;
+
+                        }
+                        catch (Exception ex)
+                        {
+
+                        }
+                    }
+                    
+                }
+
+
+
+
             }
             else
             {
                 _isFigureSelected = true;
+                if (f != null)
+                {
+                    selectedFigure = f;
+                }
             }
         }
 
@@ -93,7 +129,7 @@ namespace WpfChess
                 {
                     foreach (var cell in _canMove)
                     {
-                        var markFigure = getFigureCell(cell.Item1, cell.Item2);
+                        var markFigure = getFigureCell(cell);
                         if (markFigure != null)
                         {
                             markFigure.IsMarkFigure = false;
@@ -114,14 +150,14 @@ namespace WpfChess
                 if (figure != null)
                 {
                     var coords = getFigureCellPosition(f);
-                    _canMove = figure.CanMove(coords.x, coords.y, _desk).ToArray();
+                    _canMove = figure.CanMove(coords, _desk).ToArray();
                     if (_canMove.Length > 0)
                     {
                         _cursor = this.Cursor;
                         this.Cursor = Cursors.Hand;
                         foreach (var cell in _canMove)
                         {
-                           var markFigure =  getFigureCell(cell.Item1, cell.Item2);
+                           var markFigure =  getFigureCell(cell);
                             if (markFigure != null)
                             {
                                 markFigure.IsMarkFigure = true;

@@ -9,8 +9,12 @@ namespace Chess
     public class House : Figure
     {
         public override int FigureOrder => 3;
+        public House(FigureColor figureColor):base(figureColor)
+        {
 
-        protected override bool CheckMove(int x, int y, int destX, int destY, ChessDesk desk)
+        }
+
+        public override bool CheckMove(int x, int y, int destX, int destY, ChessDesk desk)
         {
             return false;
         }

@@ -6,41 +6,44 @@ using System.Threading.Tasks;
 
 namespace Chess
 {
+    public record ChessPoint(int Row, int Column);
+
     public abstract class Figure
     {
-        protected abstract bool CheckMove(int x, int y, int destX, int destY, ChessDesk desk);
- 
-        //public Tuple<int,int>[] CanMove(int x, int y, Figure[,] desk)
-        //{
-        //    var result = new List<Tuple<int, int>>();
-        //    for (int i = 0; i < 8; i++)
-        //    {
-        //        for (int j = 0; j < 8; j++)
-        //        {
-        //            if (CheckMove(x, y, i,j, desk))
-        //            {
-        //                result.Add(new Tuple<int, int>(i, j));
-        //            }
-        //        }
-        //    }
-        //    return result.ToArray();
-        //}
-        public IEnumerable<Tuple<int, int>> CanMove(int x, int y, ChessDesk desk)
+        public bool IsFirstMove { get; set; } = true;
+        public FigureColor FigureColor { get; private set; }
+
+        public Figure(FigureColor figureColor)
         {
-            for (int i = 0; i < 8; i++)
+            FigureColor = figureColor;    
+        }
+
+
+        public abstract bool CheckMove(int x, int y, int destX, int destY, ChessDesk desk);
+        public bool CheckMove(ChessPoint source, ChessPoint destination, ChessDesk desk)=>
+            CheckMove(source.Row,source.Column,destination.Row,destination.Column,desk);
+
+        public IEnumerable<ChessPoint> CanMove(ChessPoint position, ChessDesk desk)
+        {
+            return CanMove(position.Row, position.Column, desk);
+        }
+
+        public IEnumerable<ChessPoint> CanMove(int row, int column, ChessDesk desk)
+        {
+            for (int _row = 0; _row < 8; _row++)
             {
-                for (int j = 0; j < 8; j++)
+                for (int _column = 0; _column < 8; _column++)
                 {
-                    if (x == i && y == j) continue;
-                    if (CheckMove(x, y, i, j, desk))
+                    if (row == _row && column == _column) continue;
+                    if (CheckMove(row, column, _row, _column, desk))
                     {
                         
-                        yield return new Tuple<int, int>(i,j);
+                        yield return new ChessPoint(_row,_column);
                     }
                 }
             }
         }
-        public FigureColor FigureColor { get; set; }
+        
         public abstract int FigureOrder { get; }
 
     }
