@@ -83,5 +83,39 @@ namespace Chess
 
         }
 
+        public ChessPoint GetKingPoint(FigureColor figureColor)
+        {
+            for (int row = 0; row < 8; row++)
+            {
+                for (int column = 0; column < 8; column++)
+                {
+                    King figure = _figures[row, column] as King;
+                    if (figure != null)
+                    {
+                        if (figure.FigureColor == figureColor) 
+                            return new ChessPoint(row, column);
+                    }
+                }
+            }
+            throw new Exception("King nor exist");
+
+        }
+        public IEnumerable<ChessPoint> GetFiguresPoint(FigureColor figureColor)
+        {
+            for (int row = 0; row < 8; row++)
+            {
+                for (int column = 0; column < 8; column++)
+                {
+                    var figure = _figures[row, column];
+                    if (figure != null)
+                    {
+                        if (!figure.FigureColor.Equals(figureColor))
+                            yield return new ChessPoint(row, column);
+                    }
+                }
+            }
+        }
+
+
     }
 }
