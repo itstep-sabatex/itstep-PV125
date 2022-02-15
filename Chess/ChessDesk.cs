@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace Chess
 {
-    public class ChessDesk
+    public class ChessDesk:ICloneable
     {
         Figure[,] _figures = new Figure[8, 8];
+
+        public FigureColor? Shach = null;
+
         
         public List<Figure> KilledFigures { get;} = new List<Figure> { };
         
@@ -79,8 +82,13 @@ namespace Chess
             figure.IsFirstMove = false;
             _figures[destination.Row, destination.Column] = figure;
             _figures[source.Row, source.Column] = null;
-            ActiveColor = ActiveColor == FigureColor.Black?FigureColor.White:FigureColor.Black;
-
+            var activeColor = ActiveColor == FigureColor.Black ? FigureColor.White : FigureColor.Black;
+            
+            if (CheckShach(activeColor))
+            {
+                Shach = activeColor;
+            }
+            ActiveColor = activeColor;
         }
 
         public ChessPoint GetKingPoint(FigureColor figureColor)
@@ -109,13 +117,41 @@ namespace Chess
                     var figure = _figures[row, column];
                     if (figure != null)
                     {
-                        if (!figure.FigureColor.Equals(figureColor))
+                        if (figure.FigureColor.Equals(figureColor))
                             yield return new ChessPoint(row, column);
                     }
                 }
             }
         }
 
+        public object Clone()
+        {
+            var result = new ChessDesk();
+            for (int row = 0; row < 8; row++)
+            {
+                for (int column = 0; column < 8; column++)
+                {
+                    result._figures[row, column] = this._figures[row, column];
+                }
+            }
+            return result;
+        }
+    
+        public bool CheckShach(FigureColor kingColor)
+        {
+            var kingPoint = GetKingPoint(kingColor);
+            var figures = GetFiguresPoint(kingColor == FigureColor.Black?FigureColor.White:FigureColor.Black);
+            foreach (var figurePoint in figures)
+            {
+                var figure = _figures[figurePoint.Row, figurePoint.Column];
+                if (figure.CheckMove(figurePoint,kingPoint,this))
+                    return true;
+            }
+            return false;
+        }
+        
 
+    
+    
     }
 }

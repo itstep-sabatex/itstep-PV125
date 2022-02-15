@@ -94,6 +94,8 @@ namespace WpfChess
                             f.Figure = selectedFigure.Figure;
                             selectedFigure.Figure = null;
                             selectedFigure = null;
+                            if (_desk.Shach != null)
+                                chach.Content = $"CHACH {_desk.Shach}";
 
                         }
                         catch (Exception ex)

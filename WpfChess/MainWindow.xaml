@@ -145,7 +145,7 @@
             <local:FigureCell Grid.Row="8" Grid.Column="8" Style="{StaticResource BlackCell}"/>
 
         </Grid>
-
+        <Label Grid.Column="1" x:Name="chach"></Label>    
     </Grid>
 
 </Window>
