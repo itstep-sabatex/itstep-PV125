@@ -248,86 +248,93 @@ SELECT Id FROM Student WHERE (Id = @Id)</CommandText>
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DemoDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DemoDataSet" msprop:Generator_DataSetName="DemoDataSet">
+  <xs:element name="DemoDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DemoDataSet" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DemoDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="User" msprop:Generator_RowEvHandlerName="UserRowChangeEventHandler" msprop:Generator_RowDeletedName="UserRowDeleted" msprop:Generator_RowDeletingName="UserRowDeleting" msprop:Generator_RowEvArgName="UserRowChangeEvent" msprop:Generator_TablePropName="User" msprop:Generator_RowChangedName="UserRowChanged" msprop:Generator_RowChangingName="UserRowChanging" msprop:Generator_TableClassName="UserDataTable" msprop:Generator_RowClassName="UserRow" msprop:Generator_TableVarName="tableUser" msprop:Generator_UserTableName="User">
+        <xs:element name="User" msprop:Generator_RowClassName="UserRow" msprop:Generator_RowEvHandlerName="UserRowChangeEventHandler" msprop:Generator_RowDeletedName="UserRowDeleted" msprop:Generator_RowDeletingName="UserRowDeleting" msprop:Generator_RowEvArgName="UserRowChangeEvent" msprop:Generator_TablePropName="User" msprop:Generator_RowChangedName="UserRowChanged" msprop:Generator_UserTableName="User" msprop:Generator_RowChangingName="UserRowChanging" msprop:Generator_TableClassName="UserDataTable" msprop:Generator_TableVarName="tableUser">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Id" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_UserColumnName="Id" type="xs:int" />
-              <xs:element name="bigintField" msprop:Generator_ColumnPropNameInRow="bigintField" msprop:Generator_ColumnPropNameInTable="bigintFieldColumn" msprop:Generator_ColumnVarNameInTable="columnbigintField" msprop:Generator_UserColumnName="bigintField" type="xs:long" />
-              <xs:element name="smallintField" msprop:Generator_ColumnPropNameInRow="smallintField" msprop:Generator_ColumnPropNameInTable="smallintFieldColumn" msprop:Generator_ColumnVarNameInTable="columnsmallintField" msprop:Generator_UserColumnName="smallintField" type="xs:short" minOccurs="0" />
-              <xs:element name="tinyintField" msprop:Generator_ColumnPropNameInRow="tinyintField" msprop:Generator_ColumnPropNameInTable="tinyintFieldColumn" msprop:Generator_ColumnVarNameInTable="columntinyintField" msprop:Generator_UserColumnName="tinyintField" type="xs:unsignedByte" minOccurs="0" />
-              <xs:element name="uidField" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnPropNameInRow="uidField" msprop:Generator_ColumnPropNameInTable="uidFieldColumn" msprop:Generator_ColumnVarNameInTable="columnuidField" msprop:Generator_UserColumnName="uidField" type="xs:string" minOccurs="0" />
-              <xs:element name="decimalNumeric" msprop:Generator_ColumnPropNameInRow="decimalNumeric" msprop:Generator_ColumnPropNameInTable="decimalNumericColumn" msprop:Generator_ColumnVarNameInTable="columndecimalNumeric" msprop:Generator_UserColumnName="decimalNumeric" type="xs:decimal" minOccurs="0" />
-              <xs:element name="floatRealField" msprop:Generator_ColumnPropNameInRow="floatRealField" msprop:Generator_ColumnPropNameInTable="floatRealFieldColumn" msprop:Generator_ColumnVarNameInTable="columnfloatRealField" msprop:Generator_UserColumnName="floatRealField" type="xs:double" minOccurs="0" />
-              <xs:element name="moneyField" msprop:Generator_ColumnPropNameInRow="moneyField" msprop:Generator_ColumnPropNameInTable="moneyFieldColumn" msprop:Generator_ColumnVarNameInTable="columnmoneyField" msprop:Generator_UserColumnName="moneyField" type="xs:decimal" minOccurs="0" />
-              <xs:element name="bitField" msprop:Generator_ColumnPropNameInRow="bitField" msprop:Generator_ColumnPropNameInTable="bitFieldColumn" msprop:Generator_ColumnVarNameInTable="columnbitField" msprop:Generator_UserColumnName="bitField" type="xs:boolean" minOccurs="0" />
-              <xs:element name="charField" msprop:Generator_ColumnPropNameInRow="charField" msprop:Generator_ColumnPropNameInTable="charFieldColumn" msprop:Generator_ColumnVarNameInTable="columncharField" msprop:Generator_UserColumnName="charField" minOccurs="0">
+              <xs:element name="Id" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnVarNameInTable="columnId" type="xs:int" />
+              <xs:element name="bigintField" msprop:Generator_UserColumnName="bigintField" msprop:Generator_ColumnPropNameInTable="bigintFieldColumn" msprop:Generator_ColumnPropNameInRow="bigintField" msprop:Generator_ColumnVarNameInTable="columnbigintField" type="xs:long" />
+              <xs:element name="smallintField" msprop:Generator_UserColumnName="smallintField" msprop:Generator_ColumnPropNameInTable="smallintFieldColumn" msprop:Generator_ColumnPropNameInRow="smallintField" msprop:Generator_ColumnVarNameInTable="columnsmallintField" type="xs:short" minOccurs="0" />
+              <xs:element name="tinyintField" msprop:Generator_UserColumnName="tinyintField" msprop:Generator_ColumnPropNameInTable="tinyintFieldColumn" msprop:Generator_ColumnPropNameInRow="tinyintField" msprop:Generator_ColumnVarNameInTable="columntinyintField" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="uidField" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_UserColumnName="uidField" msprop:Generator_ColumnPropNameInTable="uidFieldColumn" msprop:Generator_ColumnPropNameInRow="uidField" msprop:Generator_ColumnVarNameInTable="columnuidField" type="xs:string" minOccurs="0" />
+              <xs:element name="decimalNumeric" msprop:Generator_UserColumnName="decimalNumeric" msprop:Generator_ColumnPropNameInTable="decimalNumericColumn" msprop:Generator_ColumnPropNameInRow="decimalNumeric" msprop:Generator_ColumnVarNameInTable="columndecimalNumeric" type="xs:decimal" minOccurs="0" />
+              <xs:element name="floatRealField" msprop:Generator_UserColumnName="floatRealField" msprop:Generator_ColumnPropNameInTable="floatRealFieldColumn" msprop:Generator_ColumnPropNameInRow="floatRealField" msprop:Generator_ColumnVarNameInTable="columnfloatRealField" type="xs:double" minOccurs="0" />
+              <xs:element name="moneyField" msprop:Generator_UserColumnName="moneyField" msprop:Generator_ColumnPropNameInTable="moneyFieldColumn" msprop:Generator_ColumnPropNameInRow="moneyField" msprop:Generator_ColumnVarNameInTable="columnmoneyField" type="xs:decimal" minOccurs="0" />
+              <xs:element name="bitField" msprop:Generator_UserColumnName="bitField" msprop:Generator_ColumnPropNameInTable="bitFieldColumn" msprop:Generator_ColumnPropNameInRow="bitField" msprop:Generator_ColumnVarNameInTable="columnbitField" type="xs:boolean" minOccurs="0" />
+              <xs:element name="charField" msprop:Generator_UserColumnName="charField" msprop:Generator_ColumnPropNameInTable="charFieldColumn" msprop:Generator_ColumnPropNameInRow="charField" msprop:Generator_ColumnVarNameInTable="columncharField" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ncharField" msprop:Generator_ColumnPropNameInRow="ncharField" msprop:Generator_ColumnPropNameInTable="ncharFieldColumn" msprop:Generator_ColumnVarNameInTable="columnncharField" msprop:Generator_UserColumnName="ncharField" minOccurs="0">
+              <xs:element name="ncharField" msprop:Generator_UserColumnName="ncharField" msprop:Generator_ColumnPropNameInTable="ncharFieldColumn" msprop:Generator_ColumnPropNameInRow="ncharField" msprop:Generator_ColumnVarNameInTable="columnncharField" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="varcharField" msprop:Generator_ColumnPropNameInRow="varcharField" msprop:Generator_ColumnPropNameInTable="varcharFieldColumn" msprop:Generator_ColumnVarNameInTable="columnvarcharField" msprop:Generator_UserColumnName="varcharField" minOccurs="0">
+              <xs:element name="varcharField" msprop:Generator_UserColumnName="varcharField" msprop:Generator_ColumnPropNameInTable="varcharFieldColumn" msprop:Generator_ColumnPropNameInRow="varcharField" msprop:Generator_ColumnVarNameInTable="columnvarcharField" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="nvarCharField" msprop:Generator_ColumnPropNameInRow="nvarCharField" msprop:Generator_ColumnPropNameInTable="nvarCharFieldColumn" msprop:Generator_ColumnVarNameInTable="columnnvarCharField" msprop:Generator_UserColumnName="nvarCharField" minOccurs="0">
+              <xs:element name="nvarCharField" msprop:Generator_UserColumnName="nvarCharField" msprop:Generator_ColumnPropNameInTable="nvarCharFieldColumn" msprop:Generator_ColumnPropNameInRow="nvarCharField" msprop:Generator_ColumnVarNameInTable="columnnvarCharField" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="nvarCharMaxField" msprop:Generator_ColumnPropNameInRow="nvarCharMaxField" msprop:Generator_ColumnPropNameInTable="nvarCharMaxFieldColumn" msprop:Generator_ColumnVarNameInTable="columnnvarCharMaxField" msprop:Generator_UserColumnName="nvarCharMaxField" minOccurs="0">
+              <xs:element name="nvarCharMaxField" msprop:Generator_UserColumnName="nvarCharMaxField" msprop:Generator_ColumnPropNameInTable="nvarCharMaxFieldColumn" msprop:Generator_ColumnPropNameInRow="nvarCharMaxField" msprop:Generator_ColumnVarNameInTable="columnnvarCharMaxField" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="textField" msprop:Generator_ColumnPropNameInRow="textField" msprop:Generator_ColumnPropNameInTable="textFieldColumn" msprop:Generator_ColumnVarNameInTable="columntextField" msprop:Generator_UserColumnName="textField" minOccurs="0">
+              <xs:element name="textField" msprop:Generator_UserColumnName="textField" msprop:Generator_ColumnPropNameInTable="textFieldColumn" msprop:Generator_ColumnPropNameInRow="textField" msprop:Generator_ColumnVarNameInTable="columntextField" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ntextField" msprop:Generator_ColumnPropNameInRow="ntextField" msprop:Generator_ColumnPropNameInTable="ntextFieldColumn" msprop:Generator_ColumnVarNameInTable="columnntextField" msprop:Generator_UserColumnName="ntextField" minOccurs="0">
+              <xs:element name="ntextField" msprop:Generator_UserColumnName="ntextField" msprop:Generator_ColumnPropNameInTable="ntextFieldColumn" msprop:Generator_ColumnPropNameInRow="ntextField" msprop:Generator_ColumnVarNameInTable="columnntextField" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="1073741823" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="imageField" msprop:Generator_ColumnPropNameInRow="imageField" msprop:Generator_ColumnPropNameInTable="imageFieldColumn" msprop:Generator_ColumnVarNameInTable="columnimageField" msprop:Generator_UserColumnName="imageField" type="xs:base64Binary" minOccurs="0" />
-              <xs:element name="binaryField" msprop:Generator_ColumnPropNameInRow="binaryField" msprop:Generator_ColumnPropNameInTable="binaryFieldColumn" msprop:Generator_ColumnVarNameInTable="columnbinaryField" msprop:Generator_UserColumnName="binaryField" type="xs:base64Binary" minOccurs="0" />
-              <xs:element name="varbinaryField" msprop:Generator_ColumnPropNameInRow="varbinaryField" msprop:Generator_ColumnPropNameInTable="varbinaryFieldColumn" msprop:Generator_ColumnVarNameInTable="columnvarbinaryField" msprop:Generator_UserColumnName="varbinaryField" type="xs:base64Binary" minOccurs="0" />
-              <xs:element name="dateField" msprop:Generator_ColumnPropNameInRow="dateField" msprop:Generator_ColumnPropNameInTable="dateFieldColumn" msprop:Generator_ColumnVarNameInTable="columndateField" msprop:Generator_UserColumnName="dateField" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="timeField" msprop:Generator_ColumnPropNameInRow="timeField" msprop:Generator_ColumnPropNameInTable="timeFieldColumn" msprop:Generator_ColumnVarNameInTable="columntimeField" msprop:Generator_UserColumnName="timeField" type="xs:duration" minOccurs="0" />
-              <xs:element name="datetimeField" msprop:Generator_ColumnPropNameInRow="datetimeField" msprop:Generator_ColumnPropNameInTable="datetimeFieldColumn" msprop:Generator_ColumnVarNameInTable="columndatetimeField" msprop:Generator_UserColumnName="datetimeField" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="datetime2Field" msprop:Generator_ColumnPropNameInRow="datetime2Field" msprop:Generator_ColumnPropNameInTable="datetime2FieldColumn" msprop:Generator_ColumnVarNameInTable="columndatetime2Field" msprop:Generator_UserColumnName="datetime2Field" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="smalldatetimeField" msprop:Generator_ColumnPropNameInRow="smalldatetimeField" msprop:Generator_ColumnPropNameInTable="smalldatetimeFieldColumn" msprop:Generator_ColumnVarNameInTable="columnsmalldatetimeField" msprop:Generator_UserColumnName="smalldatetimeField" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="datetimeoffsetField" msdata:DataType="System.DateTimeOffset" msprop:Generator_ColumnPropNameInRow="datetimeoffsetField" msprop:Generator_ColumnPropNameInTable="datetimeoffsetFieldColumn" msprop:Generator_ColumnVarNameInTable="columndatetimeoffsetField" msprop:Generator_UserColumnName="datetimeoffsetField" type="xs:anyType" minOccurs="0" />
+              <xs:element name="imageField" msprop:Generator_UserColumnName="imageField" msprop:Generator_ColumnPropNameInTable="imageFieldColumn" msprop:Generator_ColumnPropNameInRow="imageField" msprop:Generator_ColumnVarNameInTable="columnimageField" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="binaryField" msprop:Generator_UserColumnName="binaryField" msprop:Generator_ColumnPropNameInTable="binaryFieldColumn" msprop:Generator_ColumnPropNameInRow="binaryField" msprop:Generator_ColumnVarNameInTable="columnbinaryField" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="varbinaryField" msprop:Generator_UserColumnName="varbinaryField" msprop:Generator_ColumnPropNameInTable="varbinaryFieldColumn" msprop:Generator_ColumnPropNameInRow="varbinaryField" msprop:Generator_ColumnVarNameInTable="columnvarbinaryField" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="dateField" msprop:Generator_UserColumnName="dateField" msprop:Generator_ColumnPropNameInTable="dateFieldColumn" msprop:Generator_ColumnPropNameInRow="dateField" msprop:Generator_ColumnVarNameInTable="columndateField" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="timeField" msprop:Generator_UserColumnName="timeField" msprop:Generator_ColumnPropNameInTable="timeFieldColumn" msprop:Generator_ColumnPropNameInRow="timeField" msprop:Generator_ColumnVarNameInTable="columntimeField" type="xs:duration" minOccurs="0" />
+              <xs:element name="datetimeField" msprop:Generator_UserColumnName="datetimeField" msprop:Generator_ColumnPropNameInTable="datetimeFieldColumn" msprop:Generator_ColumnPropNameInRow="datetimeField" msprop:Generator_ColumnVarNameInTable="columndatetimeField" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="datetime2Field" msprop:Generator_UserColumnName="datetime2Field" msprop:Generator_ColumnPropNameInTable="datetime2FieldColumn" msprop:Generator_ColumnPropNameInRow="datetime2Field" msprop:Generator_ColumnVarNameInTable="columndatetime2Field" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="smalldatetimeField" msprop:Generator_UserColumnName="smalldatetimeField" msprop:Generator_ColumnPropNameInTable="smalldatetimeFieldColumn" msprop:Generator_ColumnPropNameInRow="smalldatetimeField" msprop:Generator_ColumnVarNameInTable="columnsmalldatetimeField" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="datetimeoffsetField" msdata:DataType="System.DateTimeOffset" msprop:Generator_UserColumnName="datetimeoffsetField" msprop:Generator_ColumnPropNameInTable="datetimeoffsetFieldColumn" msprop:Generator_ColumnPropNameInRow="datetimeoffsetField" msprop:Generator_ColumnVarNameInTable="columndatetimeoffsetField" type="xs:anyType" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Student" msprop:Generator_RowEvHandlerName="StudentRowChangeEventHandler" msprop:Generator_RowDeletedName="StudentRowDeleted" msprop:Generator_RowDeletingName="StudentRowDeleting" msprop:Generator_RowEvArgName="StudentRowChangeEvent" msprop:Generator_TablePropName="Student" msprop:Generator_RowChangedName="StudentRowChanged" msprop:Generator_RowChangingName="StudentRowChanging" msprop:Generator_TableClassName="StudentDataTable" msprop:Generator_RowClassName="StudentRow" msprop:Generator_TableVarName="tableStudent" msprop:Generator_UserTableName="Student">
+        <xs:element name="Student" msprop:Generator_RowClassName="StudentRow" msprop:Generator_RowEvHandlerName="StudentRowChangeEventHandler" msprop:Generator_RowDeletedName="StudentRowDeleted" msprop:Generator_RowDeletingName="StudentRowDeleting" msprop:Generator_RowEvArgName="StudentRowChangeEvent" msprop:Generator_TablePropName="Student" msprop:Generator_RowChangedName="StudentRowChanged" msprop:Generator_UserTableName="Student" msprop:Generator_RowChangingName="StudentRowChanging" msprop:Generator_TableClassName="StudentDataTable" msprop:Generator_TableVarName="tableStudent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Id" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="Id" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnVarNameInTable="columnId" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataTable1" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_UserTableName="DataTable1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_UserColumnName="Id" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

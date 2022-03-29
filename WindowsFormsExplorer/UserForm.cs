@@ -20,8 +20,19 @@ namespace WindowsFormsExplorer
         private void UserForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'demoDataSet.User' table. You can move, or remove it, as needed.
-            this.userTableAdapter.Fill(this.demoDataSet.User);
-            IDbDataAdapter
+            
+            
+            
+            //this.userTableAdapter.Fill(this.demoDataSet.User);
+            this.demoDataSet.ReadXml(@"C:\DataBases\demoDataSet.xml");
+
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            //this.userTableAdapter.Update(this.demoDataSet.User);
+            this.demoDataSet.WriteXml(@"C:\DataBases\demoDataSet.xml");
+
 
         }
     }
