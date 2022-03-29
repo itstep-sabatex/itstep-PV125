@@ -16,7 +16,7 @@ namespace WindowsFormsExplorer {
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UserForm());
+            Application.Run(new Form1());
         }
     }
 }

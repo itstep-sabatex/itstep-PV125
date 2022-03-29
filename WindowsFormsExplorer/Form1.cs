@@ -16,5 +16,15 @@ namespace WindowsFormsExplorer
         {
             InitializeComponent();
         }
+
+        private void groupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new GroupForm()).Show(this);
+        }
+
+        private void studentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new StudentForm()).Show(this);
+        }
     }
 }
