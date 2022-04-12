@@ -8,7 +8,7 @@ using WpfEFCoreDemo.Models;
 
 namespace WpfEFCoreDemo.Data
 {
-    internal class DemoDbContext:DbContext
+    internal class DemoDbContext : DbContext
     {
         public DbSet<Student> Students { get; set; }
         public DbSet<StudentGroup> StudenGroups { get; set; }
@@ -18,6 +18,15 @@ namespace WpfEFCoreDemo.Data
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlite(@"filename=c:\databases\PV125Demo.db");
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            //modelBuilder.Entity<Student>().HasKey(s=>s.BirthDay);
+            //modelBuilder.Entity<StudentGroup>().ToTable("SG");
+            modelBuilder.Entity<StudentGroup>().ToView("SG");
+
+        }
 
     }
 }
+

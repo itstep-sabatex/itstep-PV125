@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace WpfEFCoreDemo.Data.Migrations
+namespace WpfEFCoreDemo.Migrations
 {
     public partial class m0 : Migration
     {
@@ -28,6 +29,7 @@ namespace WpfEFCoreDemo.Data.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", nullable: false),
+                    BirthDay = table.Column<DateTime>(type: "TEXT", nullable: false),
                     StudentGroupId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>

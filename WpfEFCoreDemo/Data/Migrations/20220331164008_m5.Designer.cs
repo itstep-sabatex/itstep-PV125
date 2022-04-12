@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WpfEFCoreDemo.Data;
 
@@ -10,9 +11,10 @@ using WpfEFCoreDemo.Data;
 namespace WpfEFCoreDemo.Migrations
 {
     [DbContext(typeof(DemoDbContext))]
-    partial class DemoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220331164008_m5")]
+    partial class m5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.3");
@@ -24,13 +26,11 @@ namespace WpfEFCoreDemo.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("BirthDay")
-                        .HasColumnType("TEXT")
-                        .HasComment("День народження");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("varchar(100)")
-                        .HasColumnName("NameStudent");
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("StudentGroupId")
                         .HasColumnType("INTEGER");

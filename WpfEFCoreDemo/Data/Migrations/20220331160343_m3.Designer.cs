@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WpfEFCoreDemo.Data;
 
@@ -10,32 +11,30 @@ using WpfEFCoreDemo.Data;
 namespace WpfEFCoreDemo.Migrations
 {
     [DbContext(typeof(DemoDbContext))]
-    partial class DemoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220331160343_m3")]
+    partial class m3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.3");
 
             modelBuilder.Entity("WpfEFCoreDemo.Models.Student", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
                     b.Property<DateTime>("BirthDay")
-                        .HasColumnType("TEXT")
-                        .HasComment("День народження");
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Id")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("varchar(100)")
-                        .HasColumnName("NameStudent");
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("StudentGroupId")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("Id");
+                    b.HasKey("BirthDay");
 
                     b.HasIndex("StudentGroupId");
 
@@ -52,17 +51,9 @@ namespace WpfEFCoreDemo.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Прізвище")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.HasKey("Id");
 
-                    b.ToTable("StudentGroups");
-
-                    b.ToView("SG");
-
-                    b.HasComment("My table");
+                    b.ToTable("StudenGroups");
                 });
 
             modelBuilder.Entity("WpfEFCoreDemo.Models.Student", b =>
